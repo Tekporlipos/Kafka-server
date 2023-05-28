@@ -1,37 +1,87 @@
-Create a Dockerfile: Start by creating a Dockerfile in a directory of your choice. This file will contain instructions for building the Docker image.
+Compose file to run Kafka and ZooKeeper containers:
 
-Choose a base image: Select a base image for your Kafka server. You can use an existing Kafka Docker image or a base image like Ubuntu or Alpine Linux.
+bash
 
-Install dependencies: Install any necessary dependencies required for running Kafka, such as Java Development Kit (JDK) or JRE.
+# Kafka and ZooKeeper Docker Compose
 
-Download Kafka: Download the Kafka binaries from the Apache Kafka website or any other reliable source. You can use wget or curl commands in your Dockerfile to fetch the Kafka binaries.
+This Docker Compose configuration allows you to easily run Apache Kafka and ZooKeeper containers for local development or testing purposes.
 
-Extract Kafka: Extract the downloaded Kafka binaries using appropriate commands in the Dockerfile, such as tar or unzip.
+## Prerequisites
 
-Configure Kafka: Set up the necessary Kafka configurations by creating a configuration file or modifying the default configuration file (server.properties). You can use a text editor or shell commands in the Dockerfile to achieve this.
+Before getting started, make sure you have Docker and Docker Compose installed on your system. You can download and install them from the official Docker website: [https://www.docker.com](https://www.docker.com)
 
-Expose Kafka ports: Kafka uses multiple ports for communication. Make sure to expose the required ports in the Dockerfile using the EXPOSE instruction. Commonly used ports are 9092 for Kafka broker and 2181 for ZooKeeper.
+## Usage
 
-Set environment variables: Define any required environment variables, such as KAFKA_HOME, ZOOKEEPER_CONNECT, or KAFKA_ADVERTISED_LISTENERS, in the Dockerfile using the ENV instruction.
+1. Clone this repository to your local machine:
 
-Set entry point: Specify the entry point command in the Dockerfile using the CMD instruction. This command will be executed when the container starts and will launch the Kafka server.
+git clone https://github.com/your-username/kafka-zookeeper-docker.git
 
-Build the Docker image: Open a terminal, navigate to the directory containing the Dockerfile, and run the following command to build the Docker image:
 
-docker build -t kafka-server .
 
-Run the Kafka container: Once the Docker image is built, you can run the Kafka container using the following command:
+2. Navigate to the project directory:
 
-arduino
+cd kafka-zookeeper-docker
 
-    docker run -d --name my-kafka kafka-server
 
-Adjust the command as per your requirements, such as specifying volume mounts or custom container names.
 
-    Verify Kafka server: To ensure that the Kafka server is running correctly, you can check the logs of the running container using the following command:
 
-    perl
+3. Customize the configuration:
 
-    docker logs my-kafka
+- Open the `docker-compose.yml` file in a text editor.
+- Modify the environment variables as needed. For example, you can change the Kafka port or adjust the replication factor.
+- Save the changes.
 
-You should see the Kafka server logs indicating that it has started successfully.
+4. Start the containers:
+
+docker-compose up -d
+
+
+
+
+This command will download the required Docker images (if not already present) and start the Kafka and ZooKeeper containers in detached mode.
+
+5. Verify the containers are running:
+
+docker-compose ps
+
+
+
+
+You should see the `kafka` and `zookeeper` containers listed with a "Up" status.
+
+6. Access Kafka:
+
+Kafka is now running on your local machine. You can connect to it using the configured host and port (e.g., `localhost:9092`).
+
+7. Clean up:
+
+To stop and remove the containers, run the following command:
+
+docker-compose down
+
+
+
+
+This will stop the containers and remove their associated resources.
+
+## Customization
+
+You can customize the Kafka and ZooKeeper configuration further by modifying the respective configuration files located in the `config` directory. Feel free to adjust the settings based on your specific requirements.
+
+## Troubleshooting
+
+- If you encounter any issues while starting the containers, ensure that there are no conflicts with other services running on your local machine. Make sure the configured ports are available.
+- Check the logs of the containers for any error messages:
+
+docker-compose logs
+
+
+
+
+- For more information on configuring Kafka and ZooKeeper, refer to the official Kafka documentation: [https://kafka.apache.org/documentation/](https://kafka.apache.org/documentation/)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to customize the instructions and sections according to your specific project and requirements.

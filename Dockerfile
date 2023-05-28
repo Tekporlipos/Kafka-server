@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt-get update
 
 # Install OpenJDK 11
-RUN apt-get update && apt-get install -y openjdk-11-jdk
+RUN apt-get install -y openjdk-11-jdk
 
 
 # Set up environment variables
@@ -19,7 +19,7 @@ COPY . .
 EXPOSE 9092 2181
 RUN chmod +x /opt/bin/*.sh
 # Set the entry point command
-CMD ["sh", "-c", "/opt/bin/zookeeper-server-start.sh /opt/config/zookeeper.properties  && /opt/bin/kafka-server-start.sh /opt/config/server.properties"]
+CMD ["sh", "-c", "/opt/bin/zookeeper-server-start.sh /opt/config/zookeeper.properties & sleep 10  && /opt/bin/kafka-server-start.sh /opt/config/server.properties"]
 
 
 #To build the image, you can use the following command:
