@@ -26,7 +26,7 @@ RUN wget https://downloads.apache.org/zookeeper/zookeeper-3.8.1/apache-zookeeper
 EXPOSE 9092 2181
 
 # Set the entry point command
-CMD ["sh", "-c", "/opt/zookeeper/bin/zkServer.sh start && /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties"]
+CMD ["sh", "-c", "/opt/zookeeper/bin/zookeeper-server-start.sh /opt/zookeeper/config/zookeeper.properties && /opt/kafkabin/kafka-server-start.sh /opt/kafka/config/server.properties"]
 
 
 #To build the image, you can use the following command:
