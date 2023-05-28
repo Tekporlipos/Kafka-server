@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt-get update
 
 # Set up environment variables
-ENV KAFKA_HOME=/opt/kafka
+ENV KAFKA_HOME=/opt
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
 # Download and extract Kafka
