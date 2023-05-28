@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt-get update
 
 # Install OpenJDK 11
-RUN apt-get update && apt-get install -y openjdk-11-jdk
+RUN apt-get install -y openjdk-11-jdk
 
 
 # Set up environment variables
