@@ -16,10 +16,10 @@ ENV PATH=${PATH}:${KAFKA_HOME}/bin
 WORKDIR /opt
 COPY . .
 # Expose Kafka and ZooKeeper ports
-EXPOSE 9092
+EXPOSE 9092 2181
 RUN chmod +x /opt/bin/*.sh
 # Set the entry point command
-CMD ["sh", "-c", "/opt/bin/zookeeper-server-start.sh /opt/config/zookeeper.properties  & sleep 5 && /opt/bin/kafka-server-start.sh /opt/config/server.properties"]
+CMD ["sh", "-c", "/opt/bin/zookeeper-server-start.sh /opt/config/zookeeper.properties  && /opt/bin/kafka-server-start.sh /opt/config/server.properties"]
 
 
 #To build the image, you can use the following command:
