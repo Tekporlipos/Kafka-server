@@ -2,8 +2,7 @@
 FROM ubuntu:latest
 
 # Install dependencies
-RUN apt-get update && \
-    apt-get install -y default-jre wget
+RUN apt-get update
 
 # Set up environment variables
 ENV KAFKA_HOME=/opt/kafka
