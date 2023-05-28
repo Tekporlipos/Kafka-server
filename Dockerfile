@@ -52,4 +52,4 @@ ENV KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
 # COPY custom-server.properties /etc/kafka/server.properties
 
 # Set the entry point command to start Kafka
-CMD ["kafka-server-start"]
+CMD ["start-kafka.sh"]
