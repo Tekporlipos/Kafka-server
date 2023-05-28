@@ -11,13 +11,13 @@ ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
 # Download and extract Kafka
 WORKDIR /opt
-RUN wget https://downloads.apache.org/kafka/2.8.0/kafka_2.13-2.8.0.tgz && \
+RUN wget https://downloads.apache.org/kafka/3.4.0/kafka_2.12-3.4.0.tgz && \
     tar -xzf kafka_2.13-2.8.0.tgz && \
     rm kafka_2.13-2.8.0.tgz && \
     mv kafka_2.13-2.8.0 kafka
 
 # Install ZooKeeper
-RUN wget https://downloads.apache.org/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz && \
+RUN wget https://downloads.apache.org/zookeeper/zookeeper-3.8.1/apache-zookeeper-3.8.1-bin.tar.gz && \
     tar -xzf apache-zookeeper-3.6.3-bin.tar.gz && \
     rm apache-zookeeper-3.6.3-bin.tar.gz && \
     mv apache-zookeeper-3.6.3-bin zookeeper
