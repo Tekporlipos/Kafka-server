@@ -21,6 +21,11 @@ services:
       - KAFKA_LOG_RETENTION_HOURS=168
       - KAFKA_NUM_PARTITIONS=1
       - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+      # SSL/TLS Configuration
+      # - KAFKA_SSL_PROTOCOL=SSL
+      # - KAFKA_SSL_KEYSTORE_LOCATION=/etc/kafka/ssl/keystore.p12
+      # - KAFKA_SSL_KEYSTORE_PASSWORD=your-keystore-password
+      # - KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM=https
     ports:
       - "9092:9092"
     depends_on:
