@@ -13,7 +13,8 @@ WORKDIR /opt
 COPY . .
 # Expose Kafka and ZooKeeper ports
 EXPOSE 9092 2181
-
+RUN chmod +x /opt/bin/zookeeper-server-start.sh
+RUN chmod +x /opt/bin/kafka-server-start.sh
 # Set the entry point command
 CMD ["sh", "-c", "/opt/bin/zookeeper-server-start.sh /opt/config/zookeeper.properties && /opt/bin/kafka-server-start.sh /opt/config/server.properties"]
 
