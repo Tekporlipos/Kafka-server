@@ -14,7 +14,7 @@ Before getting started, make sure you have Docker and Docker Compose installed o
 
 1. Clone this repository to your local machine:
 
-git clone https://github.com/your-username/kafka-zookeeper-docker.git
+git clone https://github.com/Tekporlipos/Kafka-server.git
 
 
 
