@@ -2,7 +2,7 @@
 FROM confluentinc/cp-kafka
 
 # Copy the custom server.properties file
-# COPY custom-server.properties /etc/kafka/server.properties
+COPY server.properties /etc/kafka/server.properties
 
 # Set the environment variables
 # #zookeeper:2181
