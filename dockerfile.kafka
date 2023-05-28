@@ -6,7 +6,7 @@ COPY server.properties /etc/kafka/server.properties
 
 # Set the environment variables
 # #zookeeper:2181
-ENV KAFKA_ZOOKEEPER_CONNECT=216.24.57.3:2181
+ENV KAFKA_ZOOKEEPER_CONNECT=44.226.145.213:2181
 #//kafka:9092
 ENV KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka-server-server.onrender.com:9092
 ENV KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
